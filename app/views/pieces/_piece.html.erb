@@ -1,0 +1,15 @@
+<turbo-frame id="<%= dom_id piece %>" class="block">
+  <%= form_with(model: piece, class:"text-lg inline-block my-2") do |form| %>
+    <%= link_to "✎", edit_piece_path(piece), class: "btn bg-gray-100 text-xl"%>
+    <span class="inline-block ml-4 w-40 font-serif text-xl"><%= piece.name %></span>
+    <% piece.practices.each.with_index do |practice, index| %>
+      <%= check_box_tag "practices[#{index}]", practice, practice, 
+                        data: {
+                          id: piece.id,
+                          index: index,
+                          action: "pieces#toggle"
+                        },
+                        class: "ml-2 align-middle bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-10 w-10 rounded-full checked:bg-green-500" %>
+    <% end %>
+  <% end %>
+</turbo-frame>
