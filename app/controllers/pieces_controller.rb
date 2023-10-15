@@ -1,6 +1,8 @@
 class PiecesController < ApplicationController
   def index  
-    @pieces = Piece.all
+    @pieces = Piece.all.each do |piece| 
+      piece.update_date(Date.today)
+    end
   end 
 
   def create
