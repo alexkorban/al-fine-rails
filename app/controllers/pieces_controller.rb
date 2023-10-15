@@ -1,7 +1,6 @@
 class PiecesController < ApplicationController
   def index  
     @pieces = Piece.all
-    @piece = Piece.new
   end 
 
   def create

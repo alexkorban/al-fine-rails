@@ -4,10 +4,17 @@
   </p>
 <% end %>
 
-<div class="mt-4">
-  <%= render "form", piece: @piece %>
-</div>
+<turbo-frame id="new-piece" class="mt-4">
+  <%= link_to "⊕", new_piece_path(), class: "btn bg-gray-100 text-xl" %>
+  
+  <div class="inline-block">
+    <div class="inline-block ml-4 w-40"></div>
+    <% 0.upto(6).each do |i| %>
+      <span class="inline-block w-10 ml-2 text-center"><%= (Date.today - i).strftime("%a") %></span>
+    <% end %>
+  </div>
 
-<div data-controller="pieces">
-    <%= render @pieces %>
-</div>
+  <div data-controller="pieces">
+      <%= render @pieces %>
+  </div>
+</turbo-frame>

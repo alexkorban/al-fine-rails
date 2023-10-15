@@ -1,7 +1,5 @@
-<%= form_with(model: piece, class: "mb-7") do |form| %>
-  <div class="mb-5">
-    <%= form.text_field :name, placeholder: "Enter name", class: "inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none" %>
-    <%= form.submit "Save", class: "btn py-2 ml-2 bg-blue-600 text-white" %>
-    <%= link_to "Cancel", pieces_path, class: "btn mb-3 bg-gray-100" %>
-  </div>
+<%= form_with(model: piece) do |form| %>
+  <%= form.text_field :name, placeholder: "Enter piece name", class: "inline-block w-96 px-3 py-2 mt-2 shadow rounded-md border border-gray-200 outline-none" %>
+  <%= form.submit "Save", class: "btn py-2 ml-2 bg-blue-600 text-white" %>
+  <%= link_to "Cancel", pieces_path, class: "btn py-2 ml-2 bg-gray-100" %>
 <% end %>

@@ -3,9 +3,6 @@
 
   <turbo-frame id="<%= dom_id @piece %>">
     <%= render "form", piece: @piece %>
-    <%= link_to "Cancel", pieces_path, class: "btn mb-3 bg-gray-100" %>
-    <div class="inline-block ml-2">
-      <%= button_to "Delete", piece_path(@piece), method: :delete, data: { "turbo-frame": "_top" }, class: "btn bg-red-100" %>
-    </div>    
+    <%= button_to "Delete", piece_path(@piece), method: :delete, data: { "turbo-frame": "_top" }, class: "btn mt-4 bg-red-100" %>
   </turbo-frame>
 </div>

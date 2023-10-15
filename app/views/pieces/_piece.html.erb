@@ -1,5 +1,5 @@
-<turbo-frame id="<%= dom_id piece %>" class="block">
-  <%= form_with(model: piece, class:"text-lg inline-block my-2") do |form| %>
+<turbo-frame id="<%= dom_id piece %>" class="block my-4">
+  <%= form_with(model: piece, class:"text-lg inline-block") do |form| %>
     <%= link_to "✎", edit_piece_path(piece), class: "btn bg-gray-100 text-xl"%>
     <span class="inline-block ml-4 w-40 font-serif text-xl"><%= piece.name %></span>
     <% piece.practices.each.with_index do |practice, index| %>
